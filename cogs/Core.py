@@ -1,12 +1,21 @@
 import discord
 from discord.ext import commands
+import time
 
 class Core(commands.Cog, name="일반"):
     def __init__(self, bot):
         self.bot = bot
     @commands.command(name="핑", help="봇의 속도와 클라이언트 핑을 알려줘요!", aliases=["ping"])
     async def ping(self, ctx):
-        await ctx.reply(f'퐁! - {round(self.bot.latency * 1000)}ms')
+       before = time.monotonic()
+       #m = ctx.reply("Ping Test")
+       #ping = time.monotonic() - before
+       embed1 = discord.Embed(title='핑 측정 결과', description='다음은 민트초코 봇의 핑 측정 결과 입니다!')
+       #embed1.add_field(name="봇 핑(ms)", value=str(ping))
+       embed1.add_field(name="API 핑(ms)", value=str(round(self.bot.latency * 1000)))
+       embed1.set_thumbnail(
+            url=ctx.author.avatar_url_as(static_format="png", size=2048))
+       await ctx.reply(content=None, embed=embed1)
 
     @commands.command(name="개발자", help="민트초코 봇의 개발자를 알려줘요!", aliases=["hellothisisverification"])
     async def hellothisisverification(self, ctx):
