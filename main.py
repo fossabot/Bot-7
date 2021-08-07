@@ -1,4 +1,4 @@
-import discord, asyncio, os
+import discord, os
 from discord.ext import commands
 import discord.ext.tasks
 from jishaku.cog import Jishaku
