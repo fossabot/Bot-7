@@ -15,9 +15,6 @@ for file in os.listdir("cogs"):
 
 bot.load_extension('jishaku')
 
-#bot.help_command=None
-
-
 @bot.event
 async def on_ready():
     print(f"{bot.user.name} 준비완료!")
