@@ -16,8 +16,8 @@ class mods(commands.Cog, name="관리"):
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason="사유가 지정되지 않음"):
-      await member.ban(reason=reason)
-      await ctx.reply(f'{member}님은 **{reason}**라는 이유로 서버에서 차단되셨습니다.', mention_author=False)
+        await member.ban(reason=reason)
+        await ctx.reply(f'{member}님은 **{reason}**라는 이유로 서버에서 차단되셨습니다.', mention_author=False)
 
 def setup(bot):
     bot.add_cog(mods(bot))
