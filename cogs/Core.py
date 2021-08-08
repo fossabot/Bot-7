@@ -29,7 +29,7 @@ class Core(commands.Cog, name="일반"):
     @commands.bot_has_permissions(manage_messages=True)
     @commands.cooldown(rate=1, per=5, type=commands.BucketType.channel)
     async def clear(self, ctx, num: int):
-       if num <= 100 and num > 0:
+        if num <= 100 and num > 0:
             await ctx.message.delete()
             deleted = await ctx.channel.purge(limit=num)
             await ctx.send(
