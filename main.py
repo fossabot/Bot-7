@@ -1,4 +1,5 @@
-import discord, asyncio, os
+import discord
+import os
 from discord.ext import commands
 import discord.ext.tasks
 from jishaku.cog import Jishaku
@@ -15,18 +16,9 @@ for file in os.listdir("cogs"):
 
 bot.load_extension('jishaku')
 
-#bot.help_command=None
-
-
 @bot.event
 async def on_ready():
     print(f"{bot.user.name} 준비완료!")
-    @discord.ext.tasks.loop(seconds=5)
-    async def changing():
-        a = 0
-        b = 0
-        await bot.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=f'{bot.command_prefix} help를 입력해 보아요!'))
-        
-    changing.start()
+    await bot.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=f'{bot.command_prefix} help를 입력해 보아요!'))
 
 bot.run(TOKEN)

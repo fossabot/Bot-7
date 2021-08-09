@@ -1,9 +1,6 @@
 import discord
 from discord.ext import commands
-import typing
 from pytz import timezone, utc
-import datetime
-import asyncio
 
 class mods(commands.Cog, name="관리"):
     def __init__(self, bot):
