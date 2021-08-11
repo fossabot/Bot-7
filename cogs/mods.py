@@ -19,7 +19,7 @@ class mods(commands.Cog, name="관리"):
         else:
             await ctx.reply("제가 추방할려고 하는 유저보다 권한이 낮거나 같아서 추방하지 못했어요!")
             
-    @commands.command(name="ban", help="상대를 서버 밖으로 영원히 내쫓는 명령어", aliases=["차단"])
+    @commands.command(name="ban", help="상대를 서버 밖으로 영원히 내보내는 명령어", aliases=["차단"])
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason="사유가 지정되지 않음"):

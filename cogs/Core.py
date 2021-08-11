@@ -14,7 +14,7 @@ class Core(commands.Cog, name="일반"):
 
     @commands.command(name="개발자", help="민트초코 봇의 개발자를 알려줘요!", aliases=["hellothisisverification"])
     async def hellothisisverification(self, ctx):
-        await ctx.reply(f'저를 만들어 주신 분은\n정희인데 _#1063 님\nMisile#1231 님 입니다!')
+        await ctx.reply(f'저를 만들어 주신 분은 정희인데 _#1063 님과 Misile#1231 님 입니다!')
 
     @commands.command(name="초대", help="민트초코 봇의 초대링크를 보내줘요!", aliases=["invite"])
     async def invite(self, ctx):
