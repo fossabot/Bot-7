@@ -9,16 +9,28 @@ class mods(commands.Cog, name="관리"):
     @commands.has_permissions(kick_members=True)
     @commands.bot_has_permissions(kick_members=True)
     async def kick(self, ctx, member: discord.Member, *, reason="사유가 지정되지 않음"):
-        await member.kick(reason=reason)
-        await ctx.reply(f'{member}님은 **{reason}**라는 이유로 서버에서 추방되었습니다.', mention_author=False)
-        
+        if member.top_role < ctx.guild.me.top_role:
+            try:
+                await member.send(f'**{ctx.guild.name}** 서버에서 {reason} 이라는 이유로 {ctx.author}님에게 추방당하셨습니다.')
+            except:
+                pass
+            await ctx.guild.kick(member, reason=reason)
+            await ctx.reply(f"**{member}**님을 서버에서 추방하였습니다!\n사유: {reason}")
+        else:
+            await ctx.reply("제가 추방할려고 하는 유저보다 권한이 낮거나 같아서 추방하지 못했어요!")
+            
     @commands.command(name="ban", help="상대를 서버 밖으로 영원히 내쫓는 명령어", aliases=["차단"])
     @commands.has_permissions(ban_members=True)
     @commands.bot_has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason="사유가 지정되지 않음"):
-      await member.ban(reason=reason)
-      await ctx.reply(f'{member}님은 **{reason}**라는 이유로 서버에서 차단되셨습니다.', mention_author=False)
-
+        if member.top_role < ctx.guild.me.top_role:
+            try:
+                await member.send(f'**{ctx.guild.name}** 서버에서 {reason} 이라는 이유로 {ctx.author}님에게 차단당하셨습니다.')
+            except:
+                pass
+            await ctx.guild.ban(member, reason=reason)
+            await ctx.reply(f"**{member}**님을 서버에서 차단하였습니다!\n사유: {reason}")
+            
     @commands.command(name="청소", help="드러워진 채팅방을 청소해줘요!", aliases=["clear", "clean"])
     @commands.has_permissions(manage_messages=True)
     @commands.bot_has_permissions(manage_messages=True)
