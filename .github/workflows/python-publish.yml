@@ -24,4 +24,4 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run:
        |
-        bandit -r ${{ env.working-directory }}
+        python main.py
