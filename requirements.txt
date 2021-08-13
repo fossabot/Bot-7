@@ -1,0 +1,5 @@
+discord.py==1.7.3
+jishaku==2.2.0
+pytz==2021.1
+pymysql==1.0.2
+python-dotenv==0.19.0
