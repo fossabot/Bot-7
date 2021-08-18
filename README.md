@@ -5,3 +5,8 @@
 
 ### Repository Information
 [![Upload Python Package](https://github.com/Team-Jeonghee/Bot/actions/workflows/python-publish.yml/badge.svg)](https://github.com/Team-Jeonghee/Bot/actions/workflows/python-publish.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FTeam-Jeonghee%2FBot.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FTeam-Jeonghee%2FBot?ref=badge_shield)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FTeam-Jeonghee%2FBot.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FTeam-Jeonghee%2FBot?ref=badge_large)
